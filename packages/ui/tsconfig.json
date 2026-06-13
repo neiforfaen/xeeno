@@ -1,0 +1,11 @@
+{
+  "extends": "@xeeno/typescript-config/react-library.json",
+  "include": ["."],
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "paths": {
+      "@xeeno/ui/*": ["./src/*"]
+    },
+    "strictNullChecks": true
+  }
+}
