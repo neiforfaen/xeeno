@@ -4,6 +4,10 @@ const generator = (plop: PlopTypes.NodePlopAPI) =>
   plop.setGenerator("init", {
     actions: [
       (answers) => {
+        if (!answers || typeof answers !== "object" || !("name" in answers)) {
+          throw new Error("generator:init -> missing package name")
+        }
+
         if (
           "name" in answers &&
           typeof answers.name === "string" &&
@@ -11,6 +15,16 @@ const generator = (plop: PlopTypes.NodePlopAPI) =>
         ) {
           answers.name = answers.name.replace("@xeeno/", "")
         }
+
+        if (
+          typeof answers.name !== "string" ||
+          !/^[a-z0-9]+(?:-[a-z0-9]+)*$/u.test(answers.name)
+        ) {
+          throw new Error(
+            "Invalid package name. Use lowercase letters, numbers, and hyphens only."
+          )
+        }
+
         return "Config sanitized"
       },
       {
