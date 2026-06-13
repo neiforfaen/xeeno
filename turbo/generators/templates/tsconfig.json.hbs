@@ -1,0 +1,12 @@
+{
+"extends": "@xeeno/typescript-config/nextjs.json",
+"compilerOptions": {
+"baseUrl": ".",
+"paths": {
+"@/*": ["./*"],
+"@xeeno/*": ["../../packages/*"]
+}
+},
+"include": ["**/*.ts", "**/*.tsx"],
+"exclude": ["node_modules"]
+}
