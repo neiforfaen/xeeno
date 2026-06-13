@@ -19,6 +19,6 @@
     "@vitejs/plugin-react": "^5.1.4",
     "@xeeno/typescript-config": "workspace:*",
     "typescript": "6.0.3",
-    "vite": "^5.1.4"
+    "vite": "^8.0.16"
   }
 }
